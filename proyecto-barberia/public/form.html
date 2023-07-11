@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Solicitud de Turno</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            /* background-color: black; */
+            color: white;
+            background-image: url("./assets/astrobarb.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        form {
+            display: grid;
+            /* background-color: black; */
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            margin: 20px;
+            justify-items: center;
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 50%;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: #333;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        button[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #183d1a;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Solicitud de Turno</h1>
+    <input type="hidden" name="tipo" value="turno">
+    <form action="/enviar" method="POST">
+        
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido"name="apellido" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="celular">Celular:</label>
+        <input type="tel" id="celular"name="celular" required>
+
+        <label for="horario">Horario y Día:</label>
+        <input type="text" id="horario" name="horario" required>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
