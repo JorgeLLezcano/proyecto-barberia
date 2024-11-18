@@ -80,27 +80,55 @@ window.addEventListener('scroll', function() {
   });
 
   // envio de Formulario consulta
-    document.addEventListener('DOMContentLoaded', () => {
-        const form = document.querySelector('form');
-        form.addEventListener('submit', (event) => {
-            event.preventDefault();
+    // document.addEventListener('DOMContentLoaded', () => {
+    //     const form = document.querySelector('form');
+    //     form.addEventListener('submit', (event) => {
+    //         event.preventDefault();
 
-            fetch('/enviar-consulta', {
-              method: 'POST',
-              body: new FormData(form),
-            })
-              .then((response) => {
-                if (response.ok) {
-                  // Muestra la ventana emergente
-                  alert('Gracias por enviar tu consulta. Nos pondremos en contacto contigo pronto.');
-                  // Restablece el formulario
-                  form.reset();
-                }
-              })
-            .catch(error => {
-                console.log(error);
+    //         fetch('/enviar-consulta', {
+    //           method: 'POST',
+    //           body: new FormData(form),
+    //         })
+    //           .then((response) => {
+    //             if (response.ok) {
+    //               // Muestra la ventana emergente
+    //               alert('Gracias por enviar tu consulta. Nos pondremos en contacto contigo pronto.');
+    //               // Restablece el formulario
+    //               form.reset();
+    //             }
+    //           })
+    //         .catch(error => {
+    //             console.log(error);
+    //         });
+    //     });
+    // });
+
+    const form = document.getElementById('consulta-form');
+        
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        
+        // Crear URLSearchParams con los datos del formulario
+        const formData = new URLSearchParams(new FormData(form));
+        
+        try {
+            const response = await fetch('/enviar-consulta', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: formData.toString()
             });
-        });
+            
+            if (response.ok) {
+                const message = await response.text();
+                alert(message);
+                form.reset();
+            } else {
+                throw new Error('Error en la respuesta del servidor');
+            }
+        } catch (error) {
+            alert('Ocurrió un error al enviar tu turno. Intenta nuevamente.');
+            console.error('Error:', error);
+        }
     });
-
-    

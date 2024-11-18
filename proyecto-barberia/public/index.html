@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="website icon" type ="png"
-href="./assets/tubo.png">
+          <link rel="website icon" type ="png"
+          href="./assets/tubo.png">
 <!-- <a href="./assets/navajaTijera-re.png">
   <img src="./assets/navajaTijera-re.png" alt="Navaja Tijera" class="styled-image">
 </a> -->
@@ -67,13 +67,6 @@ href="./assets/tubo.png">
         </div>
         <div class="text-container">
           <span class="acerca-text">La Barberia</span>
-        
-       
-         <!-- <img src="./assets/foto16.png">
-         <span class="acerca-text">La Barberia
-          <p>
-            
-          </p> -->
          
       
       <p>El concepto hasta ahora, ha ido migrando 
@@ -128,13 +121,13 @@ href="./assets/tubo.png">
     <section id="redes">
     <div class="tarjeta-what">
       <a href="https://wa.me/543624503265?text=Hola!%20gracias%20por%20comunicarte%20con%20nosotros.%0Adejanos%20tu%20consulta%20y%20te%20responderemos%20la%20brevedad" target="_blank">
-        <img src="./assets/foto14.png" alt="Imagen de la tarjeta" onclick="window.open('https://wa.me/543624503265?text=Hola!%20gracias%20por%20comunicarte%20con%20nosotros.%0Adejanos%20tu%20consulta%20y%20te%20responderemos%20la%20brevedad', '_blank');">
+        <img src="./assets/foto14.png" alt="Imagen de la tarjeta" onclick="window.open('https://wa.me/543624503265?text=Hola!%20gracias%20por%20comunicarte%20con%20nosotros.%0Adejanos%20tu%20consulta%20y%20te%20responderemos%20la%20brevedad', '_blank')">
         <span class="whatsapp-text">whatsapp</span>
       </a>
     </div>
     <div class="tarjeta-ig">
       <a href="https://www.instagram.com/p/Bjzz_RdlGoE/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==" target="_blank">
-        <img src="./assets/facebook.jpg "alt="Imagen de la tarjeta" onclick="window.open('https://www.instagram.com/p/Bjzz_RdlGoE/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==', '_blank');">
+        <img src="./assets/facebook.jpg "alt="Imagen de la tarjeta" onclick="window.open('https://www.instagram.com/p/Bjzz_RdlGoE/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA==', '_blank')">
         <span class="instagram-text">Instagram</span>
       </a>
     </div>
@@ -159,36 +152,27 @@ href="./assets/tubo.png">
     </section>
 
     <footer id="footer">
-        <div class="mapouter">
-          <h4>Ubicación</h4>
-          <div class="gmap_canvas">
-          <iframe width="820" height="560" id="gmap_canvas" src="https://maps.google.com/maps?q=Direcci%C3%B3n%3A+Misionero+klein+130&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-          </iframe>
-          <a href="https://online.stopwatch-timer.net/">
-          </a><br>
-          <style>
-           /*.mapouter{
-           position: relative;
-            text-align: right;
-            height: 560px;
-            width: 820px;
-          }*/
-          </style><a href="https://www.embedmaps.co">embed google maps api</a>
-          <style>
-          .gmap_canvas{
-            overflow: hidden;
-            background: none !important;
-            /* height: 560px;
-            width: 820px; */
-             
-          }
-          </style>
-          </div>
+      <div class="mapouter">
+        <h2>Ubicación</h2>
+        <div class="gmap_canvas">
+        <iframe width="820" height="560" id="gmap_canvas" src="https://maps.google.com/maps?q=Direcci%C3%B3n%3A+Misionero+klein+130&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+        </iframe>
+        <a href="https://online.stopwatch-timer.net/">
+        </a>
+        <style>
+        .gmap_canvas{
+          overflow: hidden;
+          background: none !important;
+        }
+
+        </style>
         </div>
       </div>
+    </div>
       <div class="footer-container">
           <h2>Consulta</h2>
-            <form action="/enviar-consulta" method="POST">
+            <form id="consulta-form" method="POST">
+              <!-- action="/enviar-consulta -->
               
                 <label for="nombre-consulta">Nombre:</label>
                 <input type="text" id="nombre-consulta" name="nombre" required>
@@ -205,17 +189,27 @@ href="./assets/tubo.png">
       </div>
       
       <div class="redes-sociales">
+        <div class="facebook">
         <a href="#" onclick="window.open('https://www.facebook.com/facundo.munozczombos', '_blank'); return false;">
-      <div class="facebook">facebook/
+     
+        <i class="bi bi-facebook"></i>
+        facebook/
         Facundo Alejandro (Facu)
         
       </div>
+
+      <div class="Instagram">
       <a href="#" onclick="window.open('https://www.instagram.com/labarberia_facundoale/','_blank'); return false;">
-      <div class="Instagram">Instagram/
+     
+        <i class="bi bi-instagram"></i>
+        Instagram/
         labarberia_facundoale
       </div >
+      <div class="whatsapp">
       <a href="#" onclick="window.open('https://wa.me/543624503265?text=Hola!%20gracias%20por%20comunicarte%20con%20nosotros.%0Adejanos%20tu%20consulta%20y%20te%20responderemos%20la%20brevedad','_blank'); return false;">
-      <div class="whatsapp">whatsapp 
+     
+        <i class="bi bi-whatsapp"></i> 
+        whatsapp 
         362-4063518
       </div>
        <div class="Mail">Mail
@@ -229,43 +223,3 @@ window.rwbp={email:'jorgeluislezcano1988@gmail.com',phone:'5503624503265',messag
 </script>
 <script defer async src='https://duz4dqsaqembt.cloudfront.net/client/whats.js'></script>
 <script src="javascript.js"></script>
-<!-- <script>
-  document.addEventListener('DOMContentLoaded', () => {
-      const form = document.querySelector('form');
-      form.addEventListener('submit', (event) => {
-          event.preventDefault();
-
-          fetch('/enviar', {
-              method: 'POST',
-              body: new FormData(form)
-          })
-          .then(response => response.json())
-          .then(data => {
-              if (data.success) {
-                  const popup = document.getElementById('popup');
-                  popup.style.display = 'block';
-              }
-          })
-          .catch(error => {
-              console.log(error);
-          });
-      });
-  });
-</script> -->
-</html>
-<!-- <h2>Consultas</h2>
-        <form id="consulta-form">
-          <div class="form-group">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-          </div>
-          <div class="form-group">
-            <label for="email">Email de contacto:</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="consulta">Consulta:</label>
-            <textarea id="consulta" name="consulta" rows="4" required></textarea>
-          </div>
-          <input type="hidden" name="tipo" value="consulta">
-          <button type="submit">Enviar Consulta</button> -->
