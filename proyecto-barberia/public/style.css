@@ -24,11 +24,13 @@ body {
 .linea .blanca{
   color: white;
 }
-header .hamburguesa {
+.hamburguesa {
   display: none;
 }
 header nav ul {
   display: flex;
+  align-items: center;
+  gap: 4px;
 }
 .linea {
   width: 100%;
