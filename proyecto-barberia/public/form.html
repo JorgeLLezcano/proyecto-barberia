@@ -7,7 +7,7 @@
     <style>
         body {
             /* background-color: black; */
-            color: #183d1a;
+            color: white;
             background-image: url("./assets/astrobarb.png");
             background-size: cover;
             background-position: center;
@@ -18,17 +18,34 @@
             align-items: center;
             margin: 0;
             flex-direction: column;
+            font-family: 'Open Sans', sans-serif;
         }
         
         form {
             display: grid;
+            width: 300px;
             /* background-color: black; */
-            background-color: rgba(255, 255, 255, 0.5);
+            /* background-color: rgba(255, 255, 255, 0.5); */
             padding: 20px;
             margin: 20px;
             border-radius: 15px;
             /* justify-items: center; */
+            /* background: linear-gradient(45deg, #abb3c16b, #cecddf54, hsla(223, 23%, 94%, 0.522), #4767a78f, #c7ccd566, #c1c7d375); */
+            background: linear-gradient(45deg, #ff56227e, #F44336, #ff9900ab, #FF5722, #e1306c, #fd1d1d8e);
+            background-size: 200% 200%;
+            animation: gradientAnimation 5s ease infinite;
         }
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+  }
+}
         
         h1 {
             color: white;
@@ -47,14 +64,28 @@
             /* width: 100%; */
             padding: 10px;
             border: none;
-            border-radius: 10px;
-            background-color: #333;
+            /* border-radius: 10px; */
+            background-color: transparent;
             color: white;
             margin-bottom: 10px;
+            border-bottom: 2px solid white;
+           
+            transition: all .2s linear;
+            opacity: 0.1;
+        }
+        input:focus{
+            outline: none;
+            border-bottom: 2px solid white;
+            opacity: 1;
+        }
+        input:hover{
+            /* background-color: rgb(128 128 128 / 59%); */
+            cursor: pointer;
+            opacity: 1;
         }
         
         button[type="submit"] {
-            background-color: #4caf50;
+            background-color: chocolate;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -63,7 +94,7 @@
         }
         
         button[type="submit"]:hover {
-            background-color: #183d1a;
+            background-color: rgb(75, 37, 10);
         }
 
     </style>
@@ -74,7 +105,7 @@
     <form id="turnoForm"   method="POST">
         <!-- action="/enviar" -->
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
+        <input type="text" id="nombre"  name="nombre" required>
 
         <label for="apellido">Apellido:</label>
         <input type="text" id="apellido"name="apellido" required>
@@ -120,6 +151,11 @@
                 console.error('Error:', error);
             }
         });
+
+
+       
+
+
       </script>
 </body>
 </html>

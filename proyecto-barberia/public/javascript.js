@@ -79,29 +79,7 @@ window.addEventListener('scroll', function() {
     }
   });
 
-  // envio de Formulario consulta
-    // document.addEventListener('DOMContentLoaded', () => {
-    //     const form = document.querySelector('form');
-    //     form.addEventListener('submit', (event) => {
-    //         event.preventDefault();
 
-    //         fetch('/enviar-consulta', {
-    //           method: 'POST',
-    //           body: new FormData(form),
-    //         })
-    //           .then((response) => {
-    //             if (response.ok) {
-    //               // Muestra la ventana emergente
-    //               alert('Gracias por enviar tu consulta. Nos pondremos en contacto contigo pronto.');
-    //               // Restablece el formulario
-    //               form.reset();
-    //             }
-    //           })
-    //         .catch(error => {
-    //             console.log(error);
-    //         });
-    //     });
-    // });
 
     const form = document.getElementById('consulta-form');
         
@@ -132,3 +110,36 @@ window.addEventListener('scroll', function() {
             console.error('Error:', error);
         }
     });
+
+
+    // Selecciona las tarjetas específicas
+const cards = document.querySelectorAll('.tarjeta-face, .tarjeta-ig, .tarjeta-what');
+
+// Función para calcular la transformación tilt
+const tiltMove = (x, y) => `perspective(500px) rotateX(${x}deg) rotateY(${y}deg)`;
+
+// Aplica la animación a cada tarjeta
+cards.forEach(card => {
+    const height = card.clientHeight;
+    const width = card.clientWidth;
+
+    // Evento mousemove para aplicar el efecto tilt
+    card.addEventListener('mousemove', (e) => {
+        const x = e.offsetX;
+        const y = e.offsetY;
+        const multiplier = 10;
+
+        const xRotate = multiplier * ((x - width / 2) / width);
+        const yRotate = -multiplier * ((y - height / 2) / height);
+
+        card.style.transform = tiltMove(xRotate, yRotate);
+    });
+
+    // Evento mouseout para resetear la transformación
+    card.addEventListener('mouseout', () => {
+        card.style.transform = tiltMove(0, 0);
+        card.style.trasition='all .2s linear'
+    });
+});
+
+ 
