@@ -116,7 +116,7 @@ window.addEventListener('scroll', function() {
 const cards = document.querySelectorAll('.tarjeta-face, .tarjeta-ig, .tarjeta-what');
 
 // Función para calcular la transformación tilt
-const tiltMove = (x, y) => `perspective(500px) rotateX(${x}deg) rotateY(${y}deg)`;
+const tiltMove = (x, y) => `perspective(500px) scale(1.1)  rotateX(${x}deg) rotateY(${y}deg)`;
 
 // Aplica la animación a cada tarjeta
 cards.forEach(card => {
@@ -142,4 +142,22 @@ cards.forEach(card => {
     });
 });
 
- 
+const listItem = document.querySelectorAll("#landing-header li");
+const menuBackDrop = document.querySelector("#menu-backdrop");
+
+listItem.forEach((item) => {
+  item.addEventListener("mouseenter", () => {
+    const rect = item.getBoundingClientRect();
+
+    menuBackDrop.style.left = `${rect.left}px`;
+    menuBackDrop.style.top = `${rect.top }px`;
+    menuBackDrop.style.width = `${rect.width}px`;
+    menuBackDrop.style.height = `${rect.height}px`;
+
+    menuBackDrop.classList.add("active");
+  });
+
+  item.addEventListener("mouseleave", () => {
+    menuBackDrop.classList.remove("active");
+  });
+});
